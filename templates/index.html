@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Instagram Notifier</title>
+</head>
+<body>
+    <h1>Latest Instagram Posts</h1>
+    <div class="posts">
+        {% for post in posts %}
+            <div class="post">
+                <img src="{{ post[2] }}" alt="Post Image">
+                <p>{{ post[1] }}</p>
+                <small>{{ post[3] }}</small>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
